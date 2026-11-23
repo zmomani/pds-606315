@@ -32,7 +32,7 @@ Prefer to work on your own machine? See [Running locally](#running-locally).
 | 3 | [`week03-numpy/`](week03-numpy) | Arrays · dtypes & shape · views vs copies · boolean & fancy indexing · broadcasting · `axis` · `default_rng` · linear algebra | ✅ |
 | 4–5 | [`week04-05-pandas/`](week04-05-pandas) | Series/DataFrame · selection · cleaning · missing values · groupby · merge · pivot · time series · plots · full EDA | ✅ |
 | 5 | [`project/`](project) | **Project Stage 1** template — proposal & EDA notebook (due end of Week 5) | ✅ |
-| 6 | `week06-parallelism/` | Threading, multiprocessing, the GIL | 🔜 |
+| 6 | [`week06-parallelism/`](week06-parallelism) | `threading` vs `multiprocessing` · the GIL · `Process` & `Queue` · `Pool` (`apply_async`, `map`) · `ThreadPoolExecutor` / `ProcessPoolExecutor` · `Lock` & `queue.Queue` · parallel CSV loading | ✅ |
 | 7 | `week07-json/` | JSON parsing, nested data, APIs | 🔜 |
 | 8–9 | `week08-09-scraping/` | requests, BeautifulSoup, Scrapy | 🔜 |
 | 10–12 | `week10-12-django/` | Django MVT, ORM, forms, REST | 🔜 |
