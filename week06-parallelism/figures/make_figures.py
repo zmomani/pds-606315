@@ -85,7 +85,10 @@ def kitchen_figure():
         p.append(text(x0 + 77, 262, "cuts at the same", size=11.5, fill=INK))
         p.append(text(x0 + 77, 279, "time as the other", size=11.5, fill=INK))
     p.append(rect(551, 210, 38, 24, "#ffffff", NAVY, rx=3))
-    p.append(arrow(553, 222, 588, 222))
+    p.append(f'<defs><marker id="b" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" '
+             f'orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="{NAVY}"/></marker></defs>')
+    p.append(f'<line x1="556" y1="222" x2="584" y2="222" stroke="{NAVY}" stroke-width="1.6" '
+             f'marker-start="url(#b)" marker-end="url(#a)"/>')   # data can travel either way
     p.append(text(570, 330, "the hatch between kitchens: Queue / Pipe", size=12, fill=NAVY, weight="600"))
     p.append(text(570, 347, "(data is copied through it: pickled)", size=11.5, fill=INK))
     p.append(text(W / 2, H - 6, "One chef juggling dishes = concurrency.  Several chefs cooking at once = parallelism.",
@@ -176,10 +179,10 @@ def pool_figure():
         y = 46 + i * 38
         p.append(rect(615, y, 100, 28, GREEN_FILL, GREEN_LINE))
         p.append(text(665, y + 19, str((i + 1) ** 2), size=12, family=MONO))
-    p.append(text(W / 2, H - 22, "Lifecycle: create Pool  →  submit (apply_async / map)  →  close()  →  join()  →  "
-                  "results (.get())", size=12.5, fill=NAVY))
-    p.append(text(W / 2, H - 4, "or let  with Pool(...) as pool:  manage the pool, and collect every result inside the block",
-                  size=12, fill=INK))
+    p.append(text(W / 2, H - 22, "Lifecycle: create Pool  →  submit tasks  →  close()  →  join().   "
+                  "map() returns the list of results, in task order;", size=12.5, fill=NAVY))
+    p.append(text(W / 2, H - 4, "apply_async() returns one AsyncResult per task (call .get()).   "
+                  "With  with Pool(...) as pool:  collect every result inside the block.", size=12, fill=INK))
     p.append("</svg>")
     (OUT / "pool.svg").write_text("".join(p), encoding="utf-8")
 
